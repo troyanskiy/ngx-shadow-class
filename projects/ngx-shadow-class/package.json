@@ -12,5 +12,12 @@
     "shadow-overwrite-css"
   ],
   "author": "Roman Rosluk <roma@redbox.by>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/troyanskiy/ngx-shadow-class.git"
+  },
+  "bugs": {
+    "url": "https://github.com/troyanskiy/ngx-shadow-class/issues"
+  }
 }

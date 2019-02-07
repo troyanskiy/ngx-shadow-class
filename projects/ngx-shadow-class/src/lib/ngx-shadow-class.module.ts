@@ -7,4 +7,4 @@ import { ShadowClassDirective } from './shadow-class.directive';
   ],
   exports: [ShadowClassDirective]
 })
-export class NgxShadowClassModule { }
+export class ShadowClassModule { }

@@ -1,27 +1,68 @@
-# NgxShadowClassLibrary
+[![npm version](https://img.shields.io/npm/v/ngx-shadow-class.svg)](https://www.npmjs.com/package/ngx-shadow-class)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
+# NgxShadowClass
 
-## Development server
+## Will help you to overwrite css in shadow dom components
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The library provides simple directive for Angular which does the css injection
 
-## Code scaffolding
+# Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. `npm i --save ngx-shadow-class`
+2. Import `ShadowClassModule` into your `app.module` or other shared module
+3. Add `shadow-class="my-class"` to inject css into the shadow element
 
-## Build
+# Example
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+The example is provided based on the Ionic 4.0.x project
 
-## Running unit tests
+#### home.page.html
+```html
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<ion-content padding>
+  <ion-toggle class="test-class" shadow-class="test-class test-class-global"></ion-toggle>
+</ion-content>
+```
 
-## Running end-to-end tests
+#### home.page.scss (for `test-class`)
+```scss
+:host {
+  /deep/ ion-toggle {
+    &.test-class {
+      .toggle-inner {
+        width: 10px;
+      }
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+      button {
+        z-index: 9999;
+      }
 
-## Further help
+    }
+  }
+}
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+
+#### app.component.scss or other global file (for `test-class-global`)
+```scss
+ion-toggle {
+  &.test-class-global {
+    .toggle-inner {
+      width: 10px;
+    }
+  }
+}
+```
+
+#### Will add following styles into the shadow dom component
+
+1. :host(.test-class-global) .toggle-inner { width: 10px; }
+1. :host(.test-class) .toggle-inner { width: 10px; }
+1. :host(.test-class) button { z-index: 9999; }

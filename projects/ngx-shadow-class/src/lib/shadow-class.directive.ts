@@ -66,7 +66,7 @@ export class ShadowClassDirective implements OnInit {
     }
 
     if (cssTextToInsert.length) {
-      styleElement.innerText = cssTextToInsert.join('\n\n');
+      styleElement.innerText = cssTextToInsert.join('');
       this.elementRef.nativeElement.shadowRoot.append(styleElement);
     }
 
