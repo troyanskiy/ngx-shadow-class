@@ -1,0 +1,16 @@
+{
+  "name": "ngx-shadow-class",
+  "description": "Directive to inject styles into the shadow components",
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/core": "^7.0.0"
+  },
+  "keywords": [
+    "ngx-shadow-class",
+    "shadow-dom",
+    "shadow-inject-css",
+    "shadow-overwrite-css"
+  ],
+  "author": "Roman Rosluk <roma@redbox.by>",
+  "license": "MIT"
+}
