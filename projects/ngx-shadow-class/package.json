@@ -1,7 +1,7 @@
 {
   "name": "ngx-shadow-class",
   "description": "Directive to inject styles into the shadow components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/core": "^7.0.0"
   },

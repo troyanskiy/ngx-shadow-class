@@ -12,6 +12,22 @@ The library provides simple directive for Angular which does the css injection
 2. Import `ShadowClassModule` into your `app.module` or other shared module
 3. Add `shadow-class="my-class"` to inject css into the shadow element
 
+# What does it do?
+
+1. It will receive list of classes which need's to be injected into the shadow DOM
+style
+1. It will take all style sheets of the document and search for the 
+`<components_tag_name>.<style from received list>` and inject the body into the 
+styles of the shadow DOM as `host:(.<style from received list>) ....`
+
+# How to create style?
+
+Important to create style by specifying component tag and class name.
+
+Use `/deep/` if the style is in the `host:` ex below
+
+Ex: `ion-toggle.my-class-name ...`
+
 # Example
 
 The example is provided based on the Ionic 4.0.x project
